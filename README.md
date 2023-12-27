@@ -1,2 +1,2 @@
 # react-java-kamp
-React &amp; Java Kampı | React içerikleri
+React &amp; Java Kampı | React konularını içerir.
