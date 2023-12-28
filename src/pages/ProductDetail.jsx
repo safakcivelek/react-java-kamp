@@ -43,3 +43,4 @@ export default function ProductDetail() {
     </div>
   )
 }
+//kamp12
