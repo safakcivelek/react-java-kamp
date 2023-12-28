@@ -3,14 +3,17 @@ import CartSummary from './CartSummary'
 import { Button, Container, Dropdown, Menu } from 'semantic-ui-react'
 import SignedIn from './SignedIn'
 import SignedOut from './SignedOut'
+import {  useNavigate } from 'react-router'
 
 export default function Navi() {
     const [isAuthenticated, setIsAuthenticated] = useState(true)
+    const navigate = useNavigate()
 
     // Çıkış yap'a basıldığında 'handleSignOut' çalışır
     // 'setIsAuthenticated' fonksiyonu alt component'de çağrılır
     function handleSignOut() {
         setIsAuthenticated(false)
+        navigate("/")
     }
     function handleSignIn() {
         setIsAuthenticated(true)

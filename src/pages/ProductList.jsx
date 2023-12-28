@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Icon, Label, Menu, Table } from 'semantic-ui-react'
 import ProductService from '../services/productService'
+import { Link } from 'react-router-dom'
 
 export default function ProductList() {
     //hook => react'ın yaşam döngüsüne müdahale etmemiz anlamına
@@ -28,7 +29,7 @@ export default function ProductList() {
                 <Table.Body>
                     {products.map((product) => (
                         <Table.Row key={product.id}>
-                            <Table.Cell>{product.title}</Table.Cell>                        
+                            <Table.Cell><Link to={`/products/${product.id}`}>{product.title}</Link></Table.Cell>                        
                             <Table.Cell>{product.price}</Table.Cell>
                             <Table.Cell>{product.stock}</Table.Cell>                                                    
                             <Table.Cell>{product.category}</Table.Cell>
