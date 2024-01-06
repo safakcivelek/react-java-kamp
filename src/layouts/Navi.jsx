@@ -4,8 +4,11 @@ import { Button, Container, Dropdown, Menu } from 'semantic-ui-react'
 import SignedIn from './SignedIn'
 import SignedOut from './SignedOut'
 import {  useNavigate } from 'react-router'
+import { useSelector } from 'react-redux'
+
 
 export default function Navi() {
+    const { cartItems } = useSelector(state => state.cart)
     const [isAuthenticated, setIsAuthenticated] = useState(true)
     const navigate = useNavigate()
 
@@ -30,7 +33,8 @@ export default function Navi() {
                         name='messages'
                     />
                     <Menu.Menu position='right'>
-                        <CartSummary />         
+                        {/* {CartySummary ancak eleman sayısı 0 dan büyük olursa render et demektir.} */}
+                        {cartItems.length>0&&<CartSummary />}   
                         {/* Giriş yapılmışsa - Çıkış yapılmışsa */}
                         {/* Sanki SignedIn'in içinde signOut diye bir fonksiyon varda o da 'handleSignOut' meotudunu tetikliyor */}
                         {/* Burada alt componente data taşıyoruz (signOut, signIn)*/}

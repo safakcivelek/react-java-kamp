@@ -1,1 +1,2 @@
-export const cartItems = [{quantity:1, product:{productName:"Çubuk kraker"}}]
+//başlangıçta sepette eleman olmasın
+export const cartItems = []
