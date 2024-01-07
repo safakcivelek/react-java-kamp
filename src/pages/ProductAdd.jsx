@@ -1,7 +1,8 @@
-import { Form, Formik, Field } from 'formik'
+import { Form, Formik, Field, ErrorMessage } from 'formik'
 import React from 'react'
-import { Button, FormField } from 'semantic-ui-react';
+import { Button, FormField, Label } from 'semantic-ui-react';
 import * as Yup from 'yup';
+import KodlamaIoTextInput from '../utilities/customFormControls/KodlamaIoTextInput';
 
 //Yup doğrulama yapmamızı sağlayan bir yapıdır.
 export default function ProductAdd() {
@@ -23,12 +24,8 @@ export default function ProductAdd() {
             }}
         >
             <Form className='ui form'>
-                <FormField>
-                    <Field name="title" placeholder="Ürün Adı"></Field>
-                </FormField>
-                <FormField>
-                    <Field name="price" placeholder="Ürün fiyatı"></Field>
-                </FormField>
+                <KodlamaIoTextInput name="title" placeholder="Ürün Adı" />
+                <KodlamaIoTextInput name="price" placeholder="Ürün fiyatı" />
                 <Button color='green' type='submit'>Ekle</Button>
             </Form>
         </Formik>
